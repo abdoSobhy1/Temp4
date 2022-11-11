@@ -14,6 +14,12 @@
     justify-content: space-between;
 }
 
+.flex-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .flex-sb {
     display: flex;
     justify-content: space-between;
@@ -91,6 +97,14 @@
     background-color: var(--color-blue);
 }
 
+.bg-orange {
+    background-color: var(--color-orange);
+}
+
+.bg-green {
+    background-color: var(--color-green);
+}
+
 .black {
     color: black;
 }
@@ -103,6 +117,18 @@
     color: var(--color-grey);
 }
 
+.blue {
+    color: var(--color-blue);
+}
+
+.orange {
+    color: var(--color-orange);
+}
+
+.green {
+    color: var(--color-green);
+}
+
 /* position */
 .relative {
     position: relative;
@@ -111,6 +137,10 @@
 /* text styling */
 .txt-c {
     text-align: center;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .fs-14 {

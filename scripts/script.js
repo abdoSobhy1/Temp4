@@ -38,4 +38,18 @@ window.onscroll = function () {
     document.querySelector(".head").style.top = "-90px";
   }
   prevScrollpos = currentScrollPos;
+  progress();
 };
+
+let progressSpans = document.querySelectorAll(".progress > span");
+let section = document.querySelector(".targets");
+
+let progress = function () {
+  if (window.scrollY >= section.offsetTop - 600) {
+    progressSpans.forEach((span) => {
+      span.style.width = span.dataset.prog;
+    });
+  }
+};
+
+window.onload = progress;
