@@ -35,6 +35,33 @@ body {
     margin: 0;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-alt-blue);
+}
+
+/* swup animation  */
+.transition-fade {
+    transition: 4s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
 .page {
     background-color: #f1f5f9;
     min-height: 100vh;
@@ -186,4 +213,14 @@ body {
     position: absolute;
     bottom: -10px;
     left: 0;
+}
+
+.page h1::before {
+    background-color: white;
+    width: 120px;
+}
+
+.page h1::after {
+    background-color: black;
+    width: 40px;
 }
