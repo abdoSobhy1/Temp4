@@ -223,7 +223,7 @@ html.is-changing .loading {
     scale: 0.9;
     opacity: 1;
     background-color: white;
-    top: 0px;
+    top: -1px;
     left: 22px;
     padding-inline: 6px;
 }
