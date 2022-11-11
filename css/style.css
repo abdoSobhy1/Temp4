@@ -70,7 +70,7 @@ html.is-leaving .transition-fade {
 .loading {
     height: 5px;
     position: fixed;
-    top: 0;
+    top: 67px;
     left: 0;
     background: var(--color-blue);
     width: 0;
@@ -90,7 +90,12 @@ html.is-changing .loading {
 /* sidebar */
 
 .sidebar {
-    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100vh;
+    width: 215px;
     box-shadow: 0 0 10px #ddd;
 }
 
@@ -157,6 +162,33 @@ html.is-changing .loading {
 /* content */
 .content {
     overflow: hidden;
+    position: relative;
+    left: 215px;
+    width: calc(100% - 215px);
+}
+
+@media (max-width:767px) {
+    .content {
+        position: relative;
+        left: 58px;
+        width: calc(100% - 58px);
+    }
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 215px;
+    z-index: 99;
+    transition: 0.3s;
+    width: calc(100% - 215px);
+}
+
+@media (max-width:767px) {
+    .head {
+        left: 58px;
+        width: calc(100% - 58px);
+    }
 }
 
 .head .search::before {
@@ -171,15 +203,40 @@ html.is-changing .loading {
     color: var(--color-grey);
 }
 
-.head .search label {
+#input-fc+.label-fc {
     position: absolute;
     top: 50%;
     left: 38px;
     transform: translateY(-50%);
     pointer-events: none;
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.7;
     transition: 0.3s;
+}
+
+#input-fc+.label-fc.no-pad {
+    left: 18px;
+}
+
+#input-fc:focus+.label-fc,
+#input-fc+.label-fc.focused {
+    scale: 0.9;
+    opacity: 1;
+    background-color: white;
+    top: 0px;
+    left: 22px;
+    padding-inline: 6px;
+}
+
+#input-fc:focus+.label-fc.greylabel,
+#input-fc+.label-fc.greylabel.focused {
+    border-radius: 2px;
+    background-color: #eee;
+}
+
+#input-fc:focus+.label-fc.no-pad,
+#input-fc+.label-fc.no-pad.focused {
+    left: 10px;
 }
 
 .head .search input {
@@ -195,21 +252,12 @@ html.is-changing .loading {
     width: 200px;
 }
 
-.head .search input:focus+label,
-.head .search label.focused {
-    scale: 0.8;
-    opacity: 1;
-    background-color: white;
-    top: -2px;
-    left: 22px;
-    padding-inline: 4px;
-}
 
-.head .items .notification::before {
+.head .icons .notification::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    aspect-ratio: 1;
     background-color: var(--color-red);
     border-radius: 50%;
     right: -5px;
@@ -219,11 +267,12 @@ html.is-changing .loading {
 .head .icons img {
     width: 32px;
     aspect-ratio: 1;
+    border-radius: 50%;
     margin-left: 15px;
 }
 
 .page h1 {
-    margin: 20px 20px 40px;
+    margin: 87px 20px 40px;
 }
 
 .page h1::before,
@@ -243,4 +292,83 @@ html.is-changing .loading {
 .page h1::after {
     background-color: black;
     width: 40px;
+}
+
+.wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-inline: 20px;
+}
+
+@media (max-width:767px) {
+    .wrapper {
+        grid-template-columns: minmax(min(200px, 100%), 1fr);
+        margin-inline: 10px;
+    }
+}
+
+.welcome {
+    overflow: hidden;
+}
+
+.welcome .intro img {
+    width: 200px;
+    margin-bottom: -10px;
+}
+
+.welcome .avatar {
+    width: 64px;
+    height: 64px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-left: 20px;
+    margin-top: -32px;
+}
+
+.welcome .body {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.welcome .body>div {
+    flex: 1;
+}
+
+.welcome .visit {
+    margin: 0 15px 15px auto;
+    transition: 0.3s;
+}
+
+.welcome .visit:hover {
+    background-color: var(--color-alt-blue);
+}
+
+@media (max-width:767px) {
+    .welcome .intro {
+        padding-bottom: 30px;
+    }
+
+    .welcome .avatar {
+        margin-left: 0;
+    }
+
+    .welcome .body>div:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.quick-draft textarea {
+    resize: none;
+    height: 180px;
+}
+
+.quick-draft .save {
+    margin-left: auto;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.quick-draft .save:hover {
+    background-color: var(--color-alt-blue);
 }
