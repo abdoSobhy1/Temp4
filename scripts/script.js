@@ -8,3 +8,12 @@ let focusFunc = function () {
   }
 };
 search.addEventListener("focusout", focusFunc);
+
+document.querySelectorAll(".sidebar li a").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    document.querySelectorAll(".sidebar li a").forEach((i) => {
+      i.classList.remove("active");
+    });
+    item.classList.add("active");
+  });
+});
