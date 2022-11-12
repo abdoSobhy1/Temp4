@@ -300,6 +300,10 @@ html.is-changing .loading {
     }
 }
 
+.wrapper>div {
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.13), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
 .welcome {
     overflow: hidden;
 }
