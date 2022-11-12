@@ -205,7 +205,7 @@ html.is-changing .loading {
 
 #input-fc+.label-fc {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 2px);
     left: 38px;
     transform: translateY(-50%);
     pointer-events: none;
@@ -215,7 +215,7 @@ html.is-changing .loading {
 }
 
 #input-fc+.label-fc.no-pad {
-    left: 18px;
+    left: 10px;
 }
 
 #input-fc:focus+.label-fc,
@@ -226,12 +226,6 @@ html.is-changing .loading {
     top: -1px;
     left: 22px;
     padding-inline: 6px;
-}
-
-#input-fc:focus+.label-fc.greylabel,
-#input-fc+.label-fc.greylabel.focused {
-    border-radius: 2px;
-    background-color: #eee;
 }
 
 #input-fc:focus+.label-fc.no-pad,
@@ -335,6 +329,12 @@ html.is-changing .loading {
     flex: 1;
 }
 
+.welcome .visit-button {
+    flex-direction: column;
+    justify-content: flex-end;
+    height: calc(100% - 307.91px);
+}
+
 .welcome .visit {
     margin: 0 15px 15px auto;
     transition: 0.3s;
@@ -356,11 +356,29 @@ html.is-changing .loading {
     .welcome .body>div:not(:last-child) {
         margin-bottom: 20px;
     }
+
+    .welcome .visit-button {
+        height: auto;
+    }
+}
+
+.quick-draft input[type="text"] {
+    border: 1px solid #ccc;
 }
 
 .quick-draft textarea {
+    border: 1px solid #ccc;
     resize: none;
     height: 180px;
+}
+
+.quick-draft textarea#input-fc+label.label-fc {
+    top: 12px;
+}
+
+.quick-draft textarea#input-fc+label.label-fc.focused,
+.quick-draft textarea#input-fc:focus+label.label-fc {
+    top: 0px;
 }
 
 .quick-draft .save {
