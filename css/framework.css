@@ -210,6 +210,12 @@
 
 /* components */
 
+.widget {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
 .btn {
     padding: 4px 10px;
     border-radius: 6px;
