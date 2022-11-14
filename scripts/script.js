@@ -28,8 +28,10 @@ let title = function () {
     document.querySelector(".sidebar > h3").innerHTML = "ABDO";
   }
 };
-window.onload = title;
-window.onresize = title;
+window.onload = title();
+window.onresize = function () {
+  title();
+};
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
