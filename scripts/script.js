@@ -76,6 +76,18 @@ function onUrlChange() {
       });
     }
   }
+  let input = document.querySelectorAll("#input-fc");
+  input.forEach((item) => {
+    item.addEventListener("focusout", function () {
+      if (item.nextElementSibling.classList.contains("label-fc"))
+        label = item.nextElementSibling;
+      if (this.value != "" && this.value.trim() != "") {
+        label.classList.add("focused");
+      } else {
+        label.classList.remove("focused");
+      }
+    });
+  });
 }
 window.onload = progress;
 
