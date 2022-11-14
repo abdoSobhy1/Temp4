@@ -548,8 +548,6 @@ html.is-changing .loading>span {
     font-size: 16px;
 }
 
-.latest-news .info p {}
-
 .label {
     width: fit-content;
     white-space: nowrap;
@@ -565,4 +563,37 @@ html.is-changing .loading>span {
     .label {
         margin: 10px auto;
     }
+}
+
+.tasks .task-row {
+    transition: 0.3s;
+}
+
+.tasks .task-row:not(:last-of-type) {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.tasks .info {
+    flex-grow: 1;
+}
+
+.tasks .done {
+    opacity: 0.3;
+}
+
+.tasks .done h3,
+.tasks .done p {
+    text-decoration: line-through;
+    transition: 0.3s;
+}
+
+.tasks .delete {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tasks .task-row:not(.done) .delete:hover {
+    color: var(--color-red);
 }

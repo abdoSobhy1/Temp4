@@ -42,10 +42,9 @@ window.onscroll = function () {
   progress();
 };
 
-let progressSpans = document.querySelectorAll(".progress > span");
-let section = document.querySelector(".targets");
-
 let progress = function () {
+  let progressSpans = document.querySelectorAll(".progress > span");
+  let section = document.querySelector(".targets");
   if (window.scrollY >= section.offsetTop - 600) {
     progressSpans.forEach((span) => {
       if (span.style.width != span.dataset.prog) {
@@ -79,3 +78,11 @@ function onUrlChange() {
   }
 }
 window.onload = progress;
+
+document.querySelectorAll(".delete").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    if (item.parentElement.classList.contains("task-row")) {
+      item.parentElement.classList.add("done");
+    }
+  });
+});
